@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Registering a Complaint</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="style2.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<div class="w3-container" id="contact" style="margin-top:75px" align="center" >
+<h1 class="w3-xxxlarge w3-text-red"><b>Register Account</b></h1>
+<form name="register" action="register.php" method="POST">
+<p>Name:</p>
+<input type="text" name="Name" id="Name"><br>
+<p >Username:</p><input type="text" name="userid" id="userid"><br>
+<p >Area:</p>
+<select>
+  <option value="ramavarappadu">Ramavarappadu</option>
+  <option value="gunadala">Gunadala</option>
+  <option value="maruthinagars">Maruthi Nagar</option>
+  <option value="satyanarayanapuram">Satyanarayana Puram</option>
+</select>
+<br><br>
+<input type="submit" name="submit" value="Register" id="submit">
+</form>
+</div>
+
+</body>
+</html>

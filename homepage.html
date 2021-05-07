@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>E-Muncipal System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style3.css">
+<link rel="stylesheet" href="style4.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<script type="text/javascript">
+function validateregisterform()
+{
+   if(document.Registercomp.uname.value=="")
+  {
+    alert("please provide your user name");
+    return false;
+  }
+  else  if(document.Registercomp.Complaintvalue.selectedIndex=="0")
+  {
+  alert ( "Please select a complaint!");
+  return false;
+  }
+  else if(document.Registercomp.complaintboxdescription.value=="")
+  {
+    alert("Please provide the description for your complaint!");
+    return false;
+  }
+
+  /*else{
+    document.Register.submit.click();
+  }*/
+
+}
+
+function validatetrackid(){
+  if(document.form2.compidtrack.value=="")
+ {
+   alert("Tracking id should not be Empty");
+   return false;
+ }
+
+ document.getElementById('table1').innerHTML="Hello";
+/*<?php
+echo "<script>document.getElementById('table1').innerHTML="Hello";</script>";
+?>*/
+ }
+ 
+
+
+ 
+</script>
+</head>
+<body>
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+     </div>
+  <div class="w3-bar-block">
+    <a href="#register1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Register a complaint</a>
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Track your complaint</a>
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Complaint History</a>
+  <a href="hosprequest.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Register for Hospitality</a>
+  <a href="immigrantinfo.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Immigrant Information</a>
+  <a href="#feed" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Give Feedback</a>
+  <a href="main.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Logout</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">&#9776;</a>
+  </header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:15px" id="register1">
+  <!--  <h1 class="w3-jumbo"><b>E - Muncipal System</b></h1>-->
+    <h1 class="w3-xxlarge w3-text-blue"><b>Register a complaint</b></h1>
+  </div>
+  <div class="w3-container" style="margin-top:30px" id="register">
+  <form name="Registercomp" action="registercomp.php" method="POST" >
+      <h1 class="w3-large w3-text-black"><b>Enter User name</b></h1></br>
+      <input type="text" name="uname" placeholder="Enter User name" /></br></br>
+    <h1 class="w3-large w3-text-black"><b>Select the complaint here</b></h1></br>
+  <select name="Complaintvalue">
+  <option value="0">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Select the Complaint &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</option>
+  <option value="1">street lights</option>
+  <option value="2">Water supply</option>
+  <option value="3">roads and bridges</option>
+  <option value="4">sanitation</option>
+  <!--<option value="5">street lights</option>-->
+</select>
+</br></br>
+<h1 class="w3-large w3-text-black"><b>Please provide the desription for your complaint</b></h1>
+</br>
+<textarea rows="4" cols="70" name="complaintboxdescription"></textarea>
+</br>
+<h1 class="w3-large w3-text-black"><b>Register a  new complaint if not present in the list mentioned above</b></h1></br>
+<textarea rows="4" cols="70" name="complaintbox"></textarea>
+</br>
+</br>
+
+<input type="submit" value="Register complaint" name="submit" onclick="return validateregisterform();" />
+</form>
+</div>
+</div>
+<!--add again-->
+<div class="w3-main" style="margin-left:320px;margin-right:40px">
+
+<div class="w3-container" id="showcase" style="margin-top:20px">
+  <div class="w3-container" style="margin-top:30px" id="track">
+  <h1 class="w3-xxlarge w3-text-blue"><b>Track your complaint</b></h1><br>
+  <form name="form2" id="form2" action="track.php" method="POST">
+    <span class="w3-large w3-text-black"><b>Enter Complaint id:&nbsp&nbsp</b></span><span><input type="text" name="compidtrack"/></span>&nbsp&nbsp&nbsp&nbsp&nbsp<span><input type="submit" name="submit1" id="submit1" value="Track" onclick="return validatetrackid();"></span><br>
+    <p name="table1" id="table1">
+    </p>
+  </form>
+  </div>
+</div>
+</div>
+
+<div class="w3-main" style="margin-left:335px;margin-right:40px">
+  <div class="w3-container" id="services" style="margin-top:30px">
+    <h1 class="w3-xxlarge w3-text-blue"><b>Complaint history</b></h1>
+    <form name="form3" id="form3" action="comphis.php" method="POST">
+    </br>
+    <input type="submit" name="submit" value="check your comlaint history">
+  </br>
+</br>
+</br>
+  </form>
+</div>
+
+</div>
+
+
+
+<div class="w3-main" style="margin-left:335px;margin-right:40px">
+  <div class="w3-container" id="feed" style="margin-top:5px">
+    <h1 class="w3-xxlarge w3-text-blue"><b>Give your feed back on our Website</b></h1>
+    <form name="form3" id="form3" action="feedback.php" method="POST">
+        <textarea rows="4" cols="70" name="feedbackbox"></textarea>
+      </br></br>
+    <input type="submit" name="submit" value="submit your feedback">
+
+  </br>
+</br>
+</br>
+  </form>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="style2.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+/*.dropbtn {
+  background-color: #4CAF50;
+  background-color:white;
+  color: black;
+  padding: 4px;
+  font-size: 16px;
+  border: 5px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border-color:black 5px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+</style>
+
+<script type="text/javascript">
+//function for validating Login form
+  function validateloginform()
+  {
+    var Username = document.Login.userid.value;
+    var Password = document.Login.password.value;
+    if(Username == "")
+    {
+      alert("Username must be filled");
+      return false;
+    }
+    else if(Password == "")
+    {
+      alert("Password must be filled");
+      return false;
+    }
+    else{
+      document.Login.submit.click();
+    }
+  }
+</script>
+
+<body>
+<!-- Sidebar/menu -->
+<nav class="w3-topbar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-bar-block">
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Registering Account</a>
+    <a href="updatelogin1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Login</a>
+    <a href="update1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services Available</a>
+  </div>
+</nav>
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">&#9776;</a>
+ </header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+<!--Services-->
+  <div class="w3-container" id="services" style="margin-top:35px">
+  <h1 class="w3-xxxlarge w3-text-blue"><b>Login Here</b></h1>
+	<form name="Login" action="login.php" method="POST"  >
+  <p>Username:</p><input type="text" name="userid" id="userid"><br>
+  <p>Password:</p><input type="password" name="password" id="password"><br><br>
+  <br>
+    <input type="submit" name="Loginbutton" value="Login" onclick="validateloginform()">
+  <!--<input type="submit" name="submit" value="submit" style="color: transparent; background-color: transparent; border-color: transparent;">-->
+  <!--<input type="submit" name="submit" value="Login" id="submit">-->
+  </form>
+
+
+  </div>
+<!-- W3.CSS Container -->
+<!--<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right"><a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity"></a></p></div>-->
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>

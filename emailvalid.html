@@ -1,0 +1,26 @@
+<html>
+<head>
+<script>
+function func(){
+var Email = document.Register.email.value;
+var x=/[a-z A-Z]/;
+  if(x.test(Email)){
+		alert("Email is in valid Format");
+		return false;
+  }
+  else{
+	alert("Email is in invalid Format");
+	return false;
+  }
+ }
+</script>
+</head>
+<body>
+<form name="Register" >
+
+<h2>Enter Email:</h2>
+<input type="text" name="email"><br>
+<input type="button" value="check" onclick="return func();">
+</form>
+</body>
+</html>

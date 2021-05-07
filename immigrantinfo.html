@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>E-Muncipal System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style3.css">
+<link rel="stylesheet" href="style4.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<script type="text/javascript">
+function validateregisterform()
+{
+   if(document.Registercomp.uname.value=="")
+  {
+    alert("Please provide your user name");
+    return false;
+  }
+  else  if(document.Registercomp.anum.value=="")
+  {
+  alert ( "Please provide your aadhar number");
+  return false;
+  }
+  else if(document.Registercomp.num.value=="")
+  {
+    alert("Please provide your mobile number");
+    return false;
+  }
+  else if(document.Registercomp.loc.value=="")
+  {
+    alert("Please provide the location");
+    return false;
+  }
+  else if(document.Registercomp.occ.value=="")
+  {
+    alert("Please provide the occupation");
+    return false;
+  }
+else if(document.Registercomp.ename.value=="")
+  {
+    alert("Please provide the employer name");
+    return false;
+  }
+else if(document.Registercomp.enum.value=="")
+  {
+    alert("Please provide the employer number");
+    return false;
+  } 
+  /*else{
+    document.Register.submit.click();
+  }*/
+
+} 
+
+
+ 
+</script>
+</head>
+<body>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:15px" id="register1">
+  <!--  <h1 class="w3-jumbo"><b>E - Muncipal System</b></h1>-->
+    <h1 class="w3-xxlarge w3-text-blue"><b>Immgrants information</b></h1>
+  </div>
+  <div class="w3-container" style="margin-top:30px" id="register">
+  <form name="Registercomp" action="immigrantinfo.php" method="POST" >
+      <h1 class="w3-large w3-text-black"><b>Enter your Name</b></h1></br>
+      <input type="text" name="uname" placeholder="Enter your name" /></br></br>
+      <h1 class="w3-large w3-text-black"><b>Enter your Aadhar number</b></h1></br>
+      <input type="text" name="anum" placeholder="Your Aadhar number" /></br></br>
+      <h1 class="w3-large w3-text-black"><b>Enter your mobile number</b></h1></br>
+      <input type="text" name="num" placeholder="Your mobile number" /></br></br>
+      <h1 class="w3-large w3-text-black"><b>Enter your original location</b></h1></br>
+      <input type="text" name="loc" placeholder="Your original location" /></br></br>
+      <h1 class="w3-large w3-text-black"><b>Enter your occupation</b></h1></br>
+      <input type="text" name="occ" placeholder="Your occupation" /></br></br>
+      <h1 class="w3-large w3-text-black"><b>Enter your employer name</b></h1></br>
+      <input type="text" name="ename" placeholder="Your employer name" /></br></br>
+      <h1 class="w3-large w3-text-black"><b>Enter your employer mobile number</b></h1></br>
+      <input type="text" name="enum" placeholder="Your employer number" /></br></br>
+<input type="submit" value="Register" name="submit" onclick="return validateregisterform();" />
+</form>
+</div>
+</div>
+
+
+</div>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+
+</body>
+</html>
